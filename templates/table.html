@@ -1,0 +1,65 @@
+{% extends 'panel.html' %}
+{% block content %}
+<style>
+  table {
+    border-collapse: collapse;
+  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    top: 50%;
+    left: 50%;
+  }
+  
+  th, td {
+    border: none;
+    padding: 16px;
+    text-align: left;
+    background-color: #fff;
+  }
+  
+  th {
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #337ab7;
+    transition: color 0.2s ease;
+  }
+  
+  a:hover {
+    color: blue;
+  }
+  
+  .action-links {
+    text-align: right;
+  }
+</style>
+
+<table>
+  <thead>
+    <tr>
+      <th>Notesid</th>
+      <th>title</th>
+      <th>created_at</th>
+      <th>link</th>
+      <th class="action-links">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in data %}
+    <tr>
+      <td>{{i[0]}}</td>
+      <td>{{i[1]}}</td>
+      <td>{{i[2]}}</td>
+      <td><a href="{{url_for('viewnotes',nid=i[0])}}">View</a></td>
+      <td class="action-links">
+        <a href="{{url_for('updatenotes',nid=i[0])}}">update</a>
+        <a href="{{url_for('deletenotes',nid=i[0])}}">delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

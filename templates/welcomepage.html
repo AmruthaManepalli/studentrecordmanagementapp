@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Record Application</title>
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            background-image: url(static/bgimg1.jpeg);
+            background-size: cover;
+            
+        }
+        
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            text-align: center;
+            display: flex;
+            align-content: center;
+            margin-top: 300px;
+            margin-left: 150px;
+        }
+        
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Student Record Application</h1>
+        </div>
+        <div class="content">
+            <h2>Welcome!</h2>
+            <p>Please select an option to continue:</p>
+            <a href="{{url_for('signup')}}"><button class="button" >Sign Up</button></a>
+            <a href="{{url_for('signin')}}"><button class="button" >Sign In</button></a>
+        </div>
+    </div>
+</body>
+</html>

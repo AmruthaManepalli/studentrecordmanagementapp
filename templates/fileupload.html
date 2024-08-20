@@ -1,0 +1,21 @@
+{% extends 'panel.html' %}
+{% block addcss %}
+<link rel="stylesheet" href="{{url_for('static',filename='notesstyles.css')}}">
+{% endblock %}
+{% block content %}
+</br>
+<div class="container">
+    <h1>File Upload</h1>
+    <form method="post" enctype="multipart/form-data">
+        <div class="from-group">
+            <label for="file">choose files:</label><br>
+            <input type="file" id="file" name="file" accept=".jpg, .png, .pdf, .jpeg, .py, .txt, .docx, .doc" multiple required> 
+        </div>
+        
+    <div class="form-group">
+        <button type="submit">Submit</button>
+    </div>
+        
+    </form>
+</div>
+{% endblock %}

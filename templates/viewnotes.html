@@ -1,0 +1,19 @@
+{% extends 'panel.html' %}
+{% block addcss %}
+<link rel="stylesheet" href="{{url_for('static',filename='notesstyles.css')}}">
+{% endblock %}
+{% block content %}
+<style>
+    .container{
+        background-color: white;
+    }
+</style>
+<div class="container">
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title" value='{{note_data[0]}}' readonly required><br>
+    <label for="content">Content:</label><br>
+    <textarea id="content" name="content" rows="4" cols="50" placeholder="write your content here" readonly>{{note_data[1]}}</textarea><br><br>
+    
+</div>
+{% endblock %}
+
